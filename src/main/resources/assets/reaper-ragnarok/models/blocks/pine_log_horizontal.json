@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "side": "reaper-ragnarok:block/pine_log",
+    "end": "reaper-ragnarok:block/pine_log_top"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "reaper-ragnarok:block/pine_planks",
+    "top": "reaper-ragnarok:block/pine_planks",
+    "side": "reaper-ragnarok:block/pine_planks"
+  }
+}
