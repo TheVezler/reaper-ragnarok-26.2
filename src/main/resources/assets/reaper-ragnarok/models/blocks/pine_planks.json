@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "reaper-ragnarok:block/pine_planks.png"
+    "all": "reaper-ragnarok:textures/block/pine_planks"
   }
 }

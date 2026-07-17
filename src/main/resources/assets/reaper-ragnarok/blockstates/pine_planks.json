@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "reaper-ragnarok:block/pine_planks"
+      "model": "reaper-ragnarok:models/blocks/pine_planks"
     }
   }
 }

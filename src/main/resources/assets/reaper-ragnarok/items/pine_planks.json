@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "reaper-ragnarok:item/pine_planks"
+    "model": "reaper-ragnarok:models/items/pine_planks"
   }
 }
