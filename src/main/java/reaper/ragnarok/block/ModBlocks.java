@@ -3,140 +3,36 @@ package reaper.ragnarok.block;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.RotatedPillarBlock;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import reaper.ragnarok.ReaperRagnarok;
 
 import java.util.function.Function;
 
-public final class ModBlocks {
+public class ModBlocks {
 
-    public static final Block PINE_PLANKS = register(
-            "pine_planks",
-            Block::new,
-            BlockBehaviour.Properties.of()
-                    .strength(2.0F, 3.0F)
-                    .ignitedByLava(),
-            true
-    );
+    public static final Block PINE_PLANKS = registerBlock("pine_planks",
+            properties -> new Block(properties.strength(2f)
+                    .requiresCorrectToolForDrops().sound(SoundType.WOOD)));
 
-    public static final Block PINE_LOG = register(
-            "pine_log",
-            RotatedPillarBlock::new,
-            BlockBehaviour.Properties.of()
-                    .strength(2.0F)
-                    .ignitedByLava(),
-            true
-    );
-
-    public static final Block PINE_WOOD = register(
-            "pine_wood",
-            RotatedPillarBlock::new,
-            BlockBehaviour.Properties.of()
-                    .strength(2.0F)
-                    .ignitedByLava(),
-            true
-    );
-
-    public static final Block STRIPPED_PINE_LOG = register(
-            "stripped_pine_log",
-            RotatedPillarBlock::new,
-            BlockBehaviour.Properties.of()
-                    .strength(2.0F)
-                    .ignitedByLava(),
-            true
-    );
-
-    public static final Block STRIPPED_PINE_WOOD = register(
-            "stripped_pine_wood",
-            RotatedPillarBlock::new,
-            BlockBehaviour.Properties.of()
-                    .strength(2.0F)
-                    .ignitedByLava(),
-            true
-    );
-
-    public static final Block PINE_STAIRS = register(
-            "pine_stairs",
-            properties -> new StairBlock(
-                    PINE_PLANKS.defaultBlockState(),
-                    properties
-            ),
-            BlockBehaviour.Properties.ofFullCopy(PINE_PLANKS),
-            true
-    );
-
-    public static final Block PINE_SLAB = register(
-            "pine_slab",
-            SlabBlock::new,
-            BlockBehaviour.Properties.ofFullCopy(PINE_PLANKS),
-            true
-    );
-
-    private static Block register(
-            String name,
-            Function<BlockBehaviour.Properties, Block> blockFactory,
-            BlockBehaviour.Properties properties,
-            boolean registerItem
-    ) {
-        ResourceKey<Block> blockKey = ResourceKey.create(
-                Registries.BLOCK,
-                ReaperRagnarok.id(name)
-        );
-
-        Block block = blockFactory.apply(
-                properties.setId(blockKey)
-        );
-
-        Block registeredBlock = Registry.register(
-                BuiltInRegistries.BLOCK,
-                blockKey,
-                block
-        );
-
-        if (registerItem) {
-            registerBlockItem(name, registeredBlock);
-        }
-
-        return registeredBlock;
+    private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
+        Block toRegister = function.apply(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(ReaperRagnarok.MOD_ID, name))));
+        registerBlockItem(name, toRegister);
+        return Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(ReaperRagnarok.MOD_ID, name), toRegister);
     }
 
-    private static void registerBlockItem(
-            String name,
-            Block block
-    ) {
-        ResourceKey<Item> itemKey = ResourceKey.create(
-                Registries.ITEM,
-                ReaperRagnarok.id(name)
-        );
-
-        BlockItem blockItem = new BlockItem(
-                block,
-                new Item.Properties()
-                        .setId(itemKey)
-                        .useBlockDescriptionPrefix()
-        );
-
-        Registry.register(
-                BuiltInRegistries.ITEM,
-                itemKey,
-                blockItem
-        );
+    private static void registerBlockItem(String name, Block block) {
+        Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(ReaperRagnarok.MOD_ID, name),
+                new BlockItem(block, new Item.Properties().useBlockDescriptionPrefix()
+                        .setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(ReaperRagnarok.MOD_ID, name)))));
     }
 
-    public static void initialize() {
-        ReaperRagnarok.LOGGER.info(
-                "Registering blocks for {}",
-                ReaperRagnarok.MOD_ID
-        );
-    }
-
-    private ModBlocks() {
+    public static void registerModBlocks() {
+        ReaperRagnarok.LOGGER.info("Registering Mod Blocks for" + ReaperRagnarok.MOD_ID);
     }
 }
+

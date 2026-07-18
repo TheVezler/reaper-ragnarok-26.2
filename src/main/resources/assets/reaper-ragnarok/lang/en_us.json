@@ -1,11 +1,5 @@
 {
   "block.reaper-ragnarok.pine_planks": "Pine Planks",
-  "block.reaper-ragnarok.pine_log": "Pine Log",
-  "block.reaper-ragnarok.pine_wood": "Pine Wood",
-  "block.reaper-ragnarok.stripped_pine_log": "Stripped Pine Log",
-  "block.reaper-ragnarok.stripped_pine_wood": "Stripped Pine Wood",
-  "block.reaper-ragnarok.pine_stairs": "Pine Stairs",
-  "block.reaper-ragnarok.pine_slab": "Pine Slab",
 
-  "itemGroup.reaper-ragnarok": "Reaper: Ragnarok"
+  "creativemodetab.reaper-ragnarok.pine_planks": "Reaper"
 }

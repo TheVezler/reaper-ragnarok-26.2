@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "reaper-ragnarok:block/pine_planks",
-    "top": "reaper-ragnarok:block/pine_planks",
-    "side": "reaper-ragnarok:block/pine_planks"
-  }
-}

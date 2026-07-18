@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "reaper-ragnarok:textures/block/pine_planks"
-  }
-}
