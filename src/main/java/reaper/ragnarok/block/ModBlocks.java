@@ -16,8 +16,28 @@ import java.util.function.Function;
 public class ModBlocks {
 
     public static final Block PINE_PLANKS = registerBlock("pine_planks",
-            properties -> new Block(properties.strength(2f)
+            properties -> new Block(properties.strength(3f)
                     .requiresCorrectToolForDrops().sound(SoundType.WOOD)));
+
+    public static final Block PINE_WOOD = registerBlock("pine_wood",
+            properties -> new RotatedPillarBlock(properties.strength(3f)
+                    .requiresCorrectToolForDrops().sound(SoundType.WOOD)));
+
+    public static final Block PINE_LOG = registerBlock("pine_log",
+            properties -> new RotatedPillarBlock(properties.strength(3f)
+                    .requiresCorrectToolForDrops().sound(SoundType.WOOD)));
+
+    public static final Block STRIPPED_PINE_WOOD = registerBlock("stripped_pine_wood",
+            properties -> new RotatedPillarBlock(properties.strength(3f)
+                    .requiresCorrectToolForDrops().sound(SoundType.WOOD)));
+
+    public static final Block STRIPPED_PINE_LOG = registerBlock("stripped_pine_log",
+            properties -> new RotatedPillarBlock(properties.strength(3f)
+                    .requiresCorrectToolForDrops().sound(SoundType.WOOD)));
+
+    public static final Block REINFORCED_STONE = registerBlock("reinforced_stone",
+            properties -> new Block(properties.strength(2f)
+                    .requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
         Block toRegister = function.apply(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(ReaperRagnarok.MOD_ID, name))));

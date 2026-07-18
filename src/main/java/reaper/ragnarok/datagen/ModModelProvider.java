@@ -15,6 +15,19 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
         blockModelGenerators.createTrivialCube(ModBlocks.PINE_PLANKS);
 
+        BlockModelGenerators.WoodProvider pine =
+                blockModelGenerators.woodProvider(ModBlocks.PINE_LOG);
+
+        pine.logWithHorizontal(ModBlocks.PINE_LOG);
+        pine.wood(ModBlocks.PINE_WOOD);
+
+        BlockModelGenerators.WoodProvider strippedPine =
+                blockModelGenerators.woodProvider(ModBlocks.STRIPPED_PINE_LOG);
+
+        strippedPine.logWithHorizontal(ModBlocks.STRIPPED_PINE_LOG);
+        strippedPine.wood(ModBlocks.STRIPPED_PINE_WOOD);
+
+        blockModelGenerators.createTrivialCube(ModBlocks.REINFORCED_STONE);
     }
 
     @Override

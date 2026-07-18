@@ -12,11 +12,16 @@ import reaper.ragnarok.block.ModBlocks;
 
 public class ModCreativeModeTabs {
     public static final CreativeModeTab REAPER_TAB = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
-            Identifier.fromNamespaceAndPath(ReaperRagnarok.MOD_ID, "Reaper"),
+            Identifier.fromNamespaceAndPath(ReaperRagnarok.MOD_ID, "reaper"),
             FabricCreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.PINE_PLANKS))
                     .title(Component.translatable("creativemodetab.reaper-ragnarok.pine_planks"))
                     .displayItems((parameters, output) -> {
                         output.accept(ModBlocks.PINE_PLANKS);
+                        output.accept(ModBlocks.PINE_WOOD);
+                        output.accept(ModBlocks.PINE_LOG);
+                        output.accept(ModBlocks.STRIPPED_PINE_WOOD);
+                        output.accept(ModBlocks.STRIPPED_PINE_LOG);
+                        output.accept(ModBlocks.REINFORCED_STONE);
 
 
                     }).build());
