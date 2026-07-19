@@ -16,11 +16,22 @@ public class ModCreativeModeTabs {
             FabricCreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.PINE_PLANKS))
                     .title(Component.translatable("creativemodetab.reaper-ragnarok.pine_planks"))
                     .displayItems((parameters, output) -> {
-                        output.accept(ModBlocks.PINE_PLANKS);
-                        output.accept(ModBlocks.PINE_WOOD);
                         output.accept(ModBlocks.PINE_LOG);
-                        output.accept(ModBlocks.STRIPPED_PINE_WOOD);
+                        output.accept(ModBlocks.PINE_WOOD);
                         output.accept(ModBlocks.STRIPPED_PINE_LOG);
+                        output.accept(ModBlocks.STRIPPED_PINE_WOOD);
+                        output.accept(ModBlocks.PINE_PLANKS);
+                        output.accept(ModBlocks.PINE_STAIRS);
+                        output.accept(ModBlocks.PINE_SLAB);
+                        output.accept(ModBlocks.PINE_FENCE);
+                        output.accept(ModBlocks.PINE_FENCE_GATE);
+                        output.accept(ModBlocks.PINE_DOOR);
+                        output.accept(ModBlocks.PINE_TRAPDOOR);
+                        output.accept(ModBlocks.PINE_PRESSURE_PLATE);
+                        output.accept(ModBlocks.PINE_BUTTON);
+                        output.accept(ModBlocks.PINE_LEAVES);
+                        output.accept(ModBlocks.PINE_SAPLING);
+                        output.accept(ModBlocks.PETRIFIED_BONE);
                         output.accept(ModBlocks.REINFORCED_STONE);
 
 

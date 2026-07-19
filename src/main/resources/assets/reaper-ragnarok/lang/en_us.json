@@ -1,9 +1,21 @@
 {
   "block.reaper-ragnarok.pine_planks": "Pine Planks",
+  "block.reaper-ragnarok.pine_stairs": "Pine Stairs",
+  "block.reaper-ragnarok.pine_slab": "Pine Slab",
   "block.reaper-ragnarok.pine_wood": "Pine Wood",
   "block.reaper-ragnarok.pine_log": "Pine Log",
   "block.reaper-ragnarok.stripped_pine_wood": "Stripped Pine Wood",
   "block.reaper-ragnarok.stripped_pine_log": "Stripped Pine Log",
+  "block.reaper-ragnarok.pine_fence": "Pine Fence",
+  "block.reaper-ragnarok.pine_fence_gate": "Pine Fence Gate",
+  "block.reaper-ragnarok.pine_door": "Pine Door",
+  "block.reaper-ragnarok.pine_trapdoor": "Pine Trapdoor",
+  "block.reaper-ragnarok.pine_pressure_plate": "Pine Pressure Plate",
+  "block.reaper-ragnarok.pine_button": "Pine Button",
+  "block.reaper-ragnarok.pine_leaves": "Pine Leaves",
+  "block.reaper-ragnarok.pine_sapling": "Pine Sapling",
+
+  "block.reaper-ragnarok.petrified_bone": "Petrified Bone Block",
 
 
   "block.reaper-ragnarok.reinforced_stone": "Reinforced Stone",
